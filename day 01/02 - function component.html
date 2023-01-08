@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/babel.min.js"></script>
+<script type="text/babel">
+function MyButton(){
+    return (
+        <button>I am a  button</button>
+    );
+}
+function MyApp(){
+    return (
+        <div>
+            <h1>Welcome to my app</h1>
+            <MyButton />
+        </div>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(<MyApp />);
+</script>
+</html>
