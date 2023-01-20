@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bin2Dec</title>
+</head>
+<body>
+    <div id="app">
+        
+        
+    </div>
+    <script src="../../js/react.development.js"></script>
+    <script src="../../js/react-dom.development.js"></script>
+    <script src="../../js/babel.min.js"></script>
+    <script type="text/babel">
+        function Main(props) {
+            return (
+                <React.Fragment>
+                    <Binary />
+                    <Convert />
+                    <Decimal />
+                </React.Fragment>
+            );
+        }
+        function Binary(props) {
+            return (
+            <div id="binary">
+                <label htmlFor="binary-digits">Binary Digits: </label>
+                 <input type="text" defaultValue="" id="binary-digits"/>
+            </div>
+            )
+        };
+        function Convert(props){
+            return <input type="button" defaultValue="Convert" />;
+        }
+
+        function Decimal(props){
+            return (
+                <div id="decimal">
+                    <label htmlFor="decimal-digits">Decimal Digits: </label>
+                    <input type="text" defaultValue="" id="decimal-digits"/>
+                </div>
+            );
+
+        }
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<Main />)
+    </script>
+</body>
+</html>
