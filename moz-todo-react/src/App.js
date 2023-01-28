@@ -1,8 +1,13 @@
 import Todo from "../src/components/Todo";
 function App(props) {
   const taskList = props.tasks?.map((task) => (
-    <Todo name={task.name} completed={task.completed} id={task.id} />
-  )); // ? 可选链
+    <Todo
+      name={task.name}
+      completed={task.completed}
+      id={task.id}
+      key={task.id}
+    />
+  )); // ? option chain
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
