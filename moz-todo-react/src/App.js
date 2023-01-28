@@ -1,5 +1,7 @@
 import Todo from "../src/components/Todo";
 function App(props) {
+  const taskList = props.tasks?.map((task) => task.name); // ? 可选链
+  console.log(taskList);
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
