@@ -1,12 +1,17 @@
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
+import React, { useState } from "react";
+import { nanoid } from "nanoid";
 
 function App(props) {
+  const [tasks, setTasks] = useState(props.tasks);
+
   function addTask(name) {
-    alert(name);
+    const newTask = { id: `todo-${nanoid()}`, name, completed: "false" };
+    setTasks([...tasks, newTask]);
   }
-  const taskList = props.tasks?.map((task) => (
+  const taskList = tasks?.map((task) => (
     <Todo
       name={task.name}
       completed={task.completed}

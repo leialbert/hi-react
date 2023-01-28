@@ -6,7 +6,8 @@ export default function Form(props) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    props.addTask("Hello world!");
+      props.addTask(name);
+      setName("");
   }
   return (
     <form onSubmit={handleSubmit}>
