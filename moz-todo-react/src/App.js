@@ -18,13 +18,15 @@ function App(props) {
       id={task.id}
       key={task.id}
     />
-  )); // ? option chain
+  ));
+  const taskNum = taskList.length == 1 ? "task" : "tasks";
+  const headingText = `${taskList.length} ${taskNum} remaining`;
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
       <Form addTask={addTask} />
       <FilterButton />
-      <h2 id="list-heading">3 tasks remaining</h2>
+      <h2 id="list-heading">{headingText}</h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
