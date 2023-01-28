@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 export default function Todo(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState("");
+  const editFieldRef = useRef(null);
+  const editButtonRef = useRef(null);
+
   function handleChange(e) {
     setNewName(e.target.value);
   }
@@ -23,6 +26,7 @@ export default function Todo(props) {
           type="text"
           value={newName}
           onChange={handleChange}
+          ref={editFieldRef}
         />
       </div>
       <div className="btn-group">
@@ -49,6 +53,7 @@ export default function Todo(props) {
           type="checkbox"
           defaultChecked={props.completed}
           onChange={() => props.toggleTaskCompleted(props.id)}
+          ref={editButtonRef}
         />
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
